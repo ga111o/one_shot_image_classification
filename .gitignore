@@ -2,3 +2,7 @@ image_test/
 image_train/
 results/
 env
+base_image/
+user_image/
+*.pt
+*.log
