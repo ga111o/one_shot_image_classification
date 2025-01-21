@@ -6,3 +6,5 @@ base_image/
 user_image/
 *.pt
 *.log
+result_image/
+segmented_objects/
