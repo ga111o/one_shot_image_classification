@@ -8,3 +8,13 @@ user_image/
 *.log
 result_image/
 segmented_objects/
+*.yaml
+*.cache
+workart/
+pt/
+v1/
+labels/
+image_user/
+image_user_seg/
+image_user_seg_yolo/
+image_user_resize/
