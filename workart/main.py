@@ -9,7 +9,7 @@ def train_model():
     results = model.train(
         data='data.yaml',
         epochs=100,
-        imgsz=640,
+        imgsz=360,
         batch=16,
         patience=15,
         name='artwork_detection',
