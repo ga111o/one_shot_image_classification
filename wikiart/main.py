@@ -4,14 +4,22 @@ from PIL import Image
 import cv2
 
 def train_model():
-    model = YOLO('yolo11n.pt') 
+    model = YOLO('yolo11n.pt')
+    
+    model.add_callback('on_train_start', lambda: model.model.set_lora(
+        r=4,
+        alpha=4,
+        dropout=0.1,
+        module_filter=['conv']
+    ))
     
     results = model.train(
         data='data.yaml',
         epochs=100,
         imgsz=640,
         batch=16,
-        name='artwork_detection'
+        name='artwork_detection',
+        lora=True
     )
 
 def detect_artwork(image_path):
@@ -31,3 +39,4 @@ def detect_artwork(image_path):
 if __name__ == "__main__":
     train_model()
     detect_artwork('test.jpg')
+    
