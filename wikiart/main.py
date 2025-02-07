@@ -6,13 +6,6 @@ import cv2
 def train_model():
     model = YOLO('yolo11n.pt')
     
-    model.add_callback('on_train_start', lambda: model.model.set_lora(
-        r=4,
-        alpha=4,
-        dropout=0.1,
-        module_filter=['conv']
-    ))
-    
     results = model.train(
         data='data.yaml',
         epochs=100,
@@ -24,7 +17,8 @@ def train_model():
         hsv_h=0.015,
         hsv_s=0.7,
         hsv_v=0.4,
-        fliplr=0.5, 
+        fliplr=0.5,
+        patience=10,
     )
 
 if __name__ == "__main__":
