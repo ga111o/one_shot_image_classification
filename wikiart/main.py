@@ -19,7 +19,7 @@ def train_model():
         imgsz=640,
         batch=16,
         name='artwork_detection',
-        lora=True
+        lora=True,
         save_period=1,
         augment=True,
         hsv_h=0.015,
