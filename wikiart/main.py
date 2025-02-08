@@ -9,9 +9,9 @@ def train_model():
     results = model.train(
         data='data.yaml',
         epochs=100,
-        imgsz=640,
+        imgsz=800,
         batch=16,
-        name='artwork_detection',
+        name='wikiart_detection',
         save_period=1,
         augment=True,
         hsv_h=0.015,
